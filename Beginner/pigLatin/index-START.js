@@ -10,7 +10,27 @@ Translate the provided string to pig latin by following the rules below:
 */
 
 function pigLatin(str) {
-  // Code goes here
+  if ('aeiou'.includes(str[0])) {
+    return str + 'way'
+  }
+
+  let consonantCount = 0
+  for (let i = 0; i < str.length; i++) {
+    if (!'aeiou'.includes(str[i])) {
+      consonantCount++
+    }
+    else {
+      break
+    }
+  }
+
+  return str.slice(consonantCount) + str.slice(0, consonantCount) + 'ay'
 }
+
+// function pigLatin(str) {
+//   return str
+//   .replace(/^([aeiouy])(._)/, '$1$2way')
+//   .replace(/^(_[_^aeiouy]+)(._)/, '$2$1ay')
+// }
 
 module.exports = pigLatin;
