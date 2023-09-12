@@ -5,14 +5,25 @@ ordering of that which was received. E.g
 */
 
 
+// function reverseInteger(int) {
+//     let neg = int < 0 ? true : false
+//     let revNum = int.toString().split('').reverse().join('')
+//     revNum = Number.parseInt(revNum)
+//     return neg ? revNum * -1 : revNum 
+// }
+
+// Reverses a string
 function reverseString(text) {
     return [...text].reduce((acc, char) => char + acc, '')
 }
 
+// Reverses an integer
 function reverseInteger(num) {
     let reversedNumber = parseInt(reverseString(num.toString()))
+
     return (reversedNumber * Math.sign(num))
 }
+
 
 
 
